@@ -219,7 +219,7 @@ export default function Home() {
 
             <button
               disabled={!file || !diagnosis || isGenerating || isParsing}
-              onClick={() => setIsGenerating(true)}
+              onClick={handleGeneratePDI}
               className="w-full py-4 bg-accent text-white font-bold rounded-2xl shadow-xl shadow-blue-200 hover:brightness-105 active:scale-[0.98] transition-all disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
             >
               {isGenerating ? "Processando com Gemini..." : "Analisar e Gerar PDI"}
