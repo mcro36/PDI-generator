@@ -120,7 +120,10 @@ export default function Home() {
           </div>
         </div>
         <div className="flex gap-3">
-          <button className="text-sm font-medium text-slate-600 hover:bg-slate-100 px-4 py-2 rounded-lg transition-all">
+          <button
+            onClick={() => alert("1. Suba o PDF com o planejamento anual da disciplina.\n2. Descreva as necessidades do aluno no campo 'Diagnóstico'.\n3. Clique em 'Gerar PDI' para deixar que a IA crie as adaptações BNCC e DUA.")}
+            className="text-sm font-medium text-slate-600 hover:bg-slate-100 px-4 py-2 rounded-lg transition-all"
+          >
             Como funciona
           </button>
           <button className="text-sm font-semibold bg-white border border-slate-200 shadow-sm px-4 py-2 rounded-lg hover:border-slate-300 transition-all">
@@ -187,7 +190,7 @@ export default function Home() {
                 </div>
                 {file && !isParsing && (
                   <button
-                    onClick={(e) => { e.stopPropagation(); setFile(null); setExtractedQuarters([]); }}
+                    onClick={(e) => { e.stopPropagation(); setFile(null); setExtractedQuarters([]); setGeneratedPdi(null); }}
                     className="absolute top-4 right-4 text-slate-400 hover:text-red-500 transition-colors"
                   >
                     <X className="w-4 h-4" />
@@ -293,7 +296,10 @@ export default function Home() {
                   </div>
 
                   <div className="flex justify-end gap-3 mt-8">
-                    <button className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-50 transition-all">
+                    <button
+                      onClick={() => alert("Funcionalidade em desenvolvimento: O sistema irá gerar um documento específico apenas com as metas deste período letivo.")}
+                      className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-xl text-sm font-bold text-slate-600 hover:bg-slate-50 transition-all"
+                    >
                       <FileText className="w-4 h-4" /> Exportar Bimestre
                     </button>
                     <button
