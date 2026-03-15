@@ -37,9 +37,9 @@ export default function Home() {
 
         setYear(data.year);
         setExtractedQuarters(data.quarters);
-      } catch (err) {
-        console.error("Erro ao ler PDF:", err);
-        setError("Não conseguimos ler este PDF. Verifique se o arquivo não está protegido.");
+      } catch (err: any) {
+        console.error("Erro detalhado ao ler PDF:", err);
+        setError(`Erro: ${err.message || "Não conseguimos ler este PDF"}. Verifique se o arquivo não está protegido.`);
       } finally {
         setIsParsing(false);
       }

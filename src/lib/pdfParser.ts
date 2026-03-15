@@ -1,9 +1,9 @@
 import * as pdfjs from 'pdfjs-dist';
 
-// Configuração do worker para o pdf.js em ambiente Next.js
-// @ts-ignore
-if (typeof window !== 'undefined' && 'Worker' in window) {
-    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+// Configuração do worker para o pdf.js em ambiente Next.js 15
+if (typeof window !== 'undefined') {
+    // Usando a versão estável da CDN baseada na versão do pacote
+    pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 }
 
 export interface ExtractedQuarter {
